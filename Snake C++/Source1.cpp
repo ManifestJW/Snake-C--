@@ -16,7 +16,7 @@ SDL_Surface* windowSurface = NULL;
 SDL_Surface* textSurface = NULL;
 SDL_Renderer* renderer = NULL;
 SDL_Texture* textTexture = NULL;
-TTF_Font* font = TTF_OpenFont("C:/Users/plays/Development/Projects/Snake C++/Solution1/Snake C++/assets/CONSOLA.TTF", 24);
+TTF_Font* font;
 SDL_Color White = { 255, 255, 255 };
 
 int prevTime = 0;
@@ -98,6 +98,8 @@ bool init() {
 
 bool loadAssets() {
 	bool success = true;
+
+	font = TTF_OpenFont("assets/consola.ttf", 24);
 
 	if (font == NULL) {
 		std::cout << "Could not load font! " << SDL_GetError() << std::endl;
